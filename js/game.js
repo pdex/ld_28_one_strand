@@ -44,12 +44,16 @@ var game = {
 		me.state.set(me.state.PLAY, new game.PlayScreen());
 
     me.entityPool.add("mainPlayer", game.PlayerEntity);
+    me.entityPool.add("strand", game.StrandEntity);
 
     me.input.bindKey(me.input.KEY.LEFT,  "left");
     me.input.bindKey(me.input.KEY.RIGHT, "right");
+    me.input.bindKey(me.input.KEY.UP,    "up");
+    me.input.bindKey(me.input.KEY.DOWN,  "down");
     me.input.bindKey(me.input.KEY.X,     "jump", true);
 
 		// Start the game.
 		me.state.change(me.state.PLAY);
+    me.debug.renderCollisionMap = true;
 	}
 };
