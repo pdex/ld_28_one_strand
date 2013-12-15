@@ -4,3 +4,4 @@
  * You're walking across a lava wasteland
  * You need to get somewhere? (sheep prom)
  * The strand catches fire. If the fire catches up to you, sheep bomb-splosion.
+* Maybe like snake?

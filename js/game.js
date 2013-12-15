@@ -35,6 +35,7 @@ var game = {
 
 	// Initialize melonJS and display a loading screen.
 	me.state.change(me.state.LOADING);
+  me.sys.gravity = 0;
 },
 
 	// Run on game resources loaded.
@@ -42,7 +43,13 @@ var game = {
 		me.state.set(me.state.MENU, new game.TitleScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());
 
+    me.entityPool.add("mainPlayer", game.PlayerEntity);
+
+    me.input.bindKey(me.input.KEY.LEFT,  "left");
+    me.input.bindKey(me.input.KEY.RIGHT, "right");
+    me.input.bindKey(me.input.KEY.X,     "jump", true);
+
 		// Start the game.
-		me.state.change(me.state.MENU);
+		me.state.change(me.state.PLAY);
 	}
 };
